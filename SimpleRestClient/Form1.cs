@@ -6,5 +6,11 @@ namespace SimpleRestClient
         {
             InitializeComponent();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form about = new AboutForm();
+            about.ShowDialog();
+        }
     }
 }
