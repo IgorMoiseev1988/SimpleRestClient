@@ -1,8 +1,8 @@
 namespace SimpleRestClient
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -11,6 +11,11 @@ namespace SimpleRestClient
         {
             Form about = new AboutForm();
             about.ShowDialog();
+        }
+
+        private void ButtonExecute_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
