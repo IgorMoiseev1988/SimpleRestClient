@@ -38,6 +38,9 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGet = new System.Windows.Forms.TabPage();
+            this.panelHeaders = new System.Windows.Forms.Panel();
+            this.groupBoxHeaders = new System.Windows.Forms.GroupBox();
+            this.textBoxHeaders = new System.Windows.Forms.TextBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.groupBoxRequest = new System.Windows.Forms.GroupBox();
@@ -50,6 +53,8 @@
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGet.SuspendLayout();
+            this.panelHeaders.SuspendLayout();
+            this.groupBoxHeaders.SuspendLayout();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -118,9 +123,9 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // tabControl
             // 
@@ -135,6 +140,7 @@
             // 
             // tabPageGet
             // 
+            this.tabPageGet.Controls.Add(this.panelHeaders);
             this.tabPageGet.Controls.Add(this.panelMain);
             this.tabPageGet.Controls.Add(this.panelCommand);
             this.tabPageGet.Location = new System.Drawing.Point(4, 24);
@@ -145,13 +151,45 @@
             this.tabPageGet.Text = "GET";
             this.tabPageGet.UseVisualStyleBackColor = true;
             // 
+            // panelHeaders
+            // 
+            this.panelHeaders.Controls.Add(this.groupBoxHeaders);
+            this.panelHeaders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeaders.Location = new System.Drawing.Point(3, 3);
+            this.panelHeaders.Name = "panelHeaders";
+            this.panelHeaders.Size = new System.Drawing.Size(962, 130);
+            this.panelHeaders.TabIndex = 2;
+            // 
+            // groupBoxHeaders
+            // 
+            this.groupBoxHeaders.Controls.Add(this.textBoxHeaders);
+            this.groupBoxHeaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxHeaders.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxHeaders.Name = "groupBoxHeaders";
+            this.groupBoxHeaders.Size = new System.Drawing.Size(962, 130);
+            this.groupBoxHeaders.TabIndex = 0;
+            this.groupBoxHeaders.TabStop = false;
+            this.groupBoxHeaders.Text = "Headers";
+            // 
+            // textBoxHeaders
+            // 
+            this.textBoxHeaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxHeaders.Location = new System.Drawing.Point(3, 19);
+            this.textBoxHeaders.Multiline = true;
+            this.textBoxHeaders.Name = "textBoxHeaders";
+            this.textBoxHeaders.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxHeaders.Size = new System.Drawing.Size(956, 108);
+            this.textBoxHeaders.TabIndex = 0;
+            // 
             // panelMain
             // 
+            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.Controls.Add(this.splitContainer);
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(3, 3);
+            this.panelMain.Location = new System.Drawing.Point(3, 130);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(962, 470);
+            this.panelMain.Size = new System.Drawing.Size(962, 342);
             this.panelMain.TabIndex = 1;
             // 
             // splitContainer
@@ -168,8 +206,8 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.groupBoxResponse);
-            this.splitContainer.Size = new System.Drawing.Size(962, 470);
-            this.splitContainer.SplitterDistance = 235;
+            this.splitContainer.Size = new System.Drawing.Size(962, 342);
+            this.splitContainer.SplitterDistance = 171;
             this.splitContainer.TabIndex = 0;
             // 
             // groupBoxRequest
@@ -178,7 +216,7 @@
             this.groupBoxRequest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxRequest.Location = new System.Drawing.Point(0, 0);
             this.groupBoxRequest.Name = "groupBoxRequest";
-            this.groupBoxRequest.Size = new System.Drawing.Size(962, 235);
+            this.groupBoxRequest.Size = new System.Drawing.Size(962, 171);
             this.groupBoxRequest.TabIndex = 0;
             this.groupBoxRequest.TabStop = false;
             this.groupBoxRequest.Text = "Request";
@@ -190,7 +228,7 @@
             this.textBoxRequest.Multiline = true;
             this.textBoxRequest.Name = "textBoxRequest";
             this.textBoxRequest.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxRequest.Size = new System.Drawing.Size(956, 213);
+            this.textBoxRequest.Size = new System.Drawing.Size(956, 149);
             this.textBoxRequest.TabIndex = 0;
             // 
             // groupBoxResponse
@@ -199,7 +237,7 @@
             this.groupBoxResponse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxResponse.Location = new System.Drawing.Point(0, 0);
             this.groupBoxResponse.Name = "groupBoxResponse";
-            this.groupBoxResponse.Size = new System.Drawing.Size(962, 231);
+            this.groupBoxResponse.Size = new System.Drawing.Size(962, 167);
             this.groupBoxResponse.TabIndex = 1;
             this.groupBoxResponse.TabStop = false;
             this.groupBoxResponse.Text = "Response";
@@ -211,7 +249,7 @@
             this.textBoxResponse.Multiline = true;
             this.textBoxResponse.Name = "textBoxResponse";
             this.textBoxResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxResponse.Size = new System.Drawing.Size(956, 209);
+            this.textBoxResponse.Size = new System.Drawing.Size(956, 145);
             this.textBoxResponse.TabIndex = 0;
             // 
             // panelCommand
@@ -258,6 +296,9 @@
             this.menuStrip1.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabPageGet.ResumeLayout(false);
+            this.panelHeaders.ResumeLayout(false);
+            this.groupBoxHeaders.ResumeLayout(false);
+            this.groupBoxHeaders.PerformLayout();
             this.panelMain.ResumeLayout(false);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
@@ -294,5 +335,8 @@
         private TextBox textBoxRequest;
         private GroupBox groupBoxResponse;
         private TextBox textBoxResponse;
+        private Panel panelHeaders;
+        private GroupBox groupBoxHeaders;
+        private TextBox textBoxHeaders;
     }
 }
