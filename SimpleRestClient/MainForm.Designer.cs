@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ComboBox RequestTypeComboBox;
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("SimpleRequest");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Examples", new System.Windows.Forms.TreeNode[] {
             treeNode1});
@@ -42,16 +43,46 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.RequestTreeView = new System.Windows.Forms.TreeView();
             this.SearchButton = new System.Windows.Forms.Button();
             this.NewRequestFolderButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.NewRequestButton = new System.Windows.Forms.Button();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.saveRequestButton = new System.Windows.Forms.Button();
+            this.sendRequestBbutton = new System.Windows.Forms.Button();
+            this.URITextBox = new System.Windows.Forms.TextBox();
+            this.RequestNameLabel = new System.Windows.Forms.Label();
+            RequestTypeComboBox = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // RequestTypeComboBox
+            // 
+            RequestTypeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            RequestTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            RequestTypeComboBox.FormattingEnabled = true;
+            RequestTypeComboBox.Items.AddRange(new object[] {
+            "POST",
+            "GET"});
+            RequestTypeComboBox.Location = new System.Drawing.Point(3, 33);
+            RequestTypeComboBox.Name = "RequestTypeComboBox";
+            RequestTypeComboBox.Size = new System.Drawing.Size(84, 23);
+            RequestTypeComboBox.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -98,7 +129,7 @@
             // hideSidebarToolStripMenuItem
             // 
             this.hideSidebarToolStripMenuItem.Name = "hideSidebarToolStripMenuItem";
-            this.hideSidebarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hideSidebarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.hideSidebarToolStripMenuItem.Text = "Hide sidebar";
             this.hideSidebarToolStripMenuItem.Click += new System.EventHandler(this.hideSidebarToolStripMenuItem_Click);
             // 
@@ -113,7 +144,7 @@
             // основноеToolStripMenuItem
             // 
             this.основноеToolStripMenuItem.Name = "основноеToolStripMenuItem";
-            this.основноеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.основноеToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.основноеToolStripMenuItem.Text = "Main";
             // 
             // helpToolStripMenuItem
@@ -127,7 +158,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -142,31 +173,41 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            this.splitContainer1.Panel1.Controls.Add(this.RequestTreeView);
             this.splitContainer1.Panel1.Controls.Add(this.SearchButton);
             this.splitContainer1.Panel1.Controls.Add(this.NewRequestFolderButton);
             this.splitContainer1.Panel1.Controls.Add(this.searchTextBox);
             this.splitContainer1.Panel1.Controls.Add(this.NewRequestButton);
             this.splitContainer1.Panel1MinSize = 180;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel2.Controls.Add(this.saveRequestButton);
+            this.splitContainer1.Panel2.Controls.Add(this.sendRequestBbutton);
+            this.splitContainer1.Panel2.Controls.Add(this.URITextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.RequestNameLabel);
+            this.splitContainer1.Panel2.Controls.Add(RequestTypeComboBox);
+            this.splitContainer1.Panel2MinSize = 200;
             this.splitContainer1.Size = new System.Drawing.Size(976, 538);
             this.splitContainer1.SplitterDistance = 180;
             this.splitContainer1.TabIndex = 1;
             // 
-            // treeView1
+            // RequestTreeView
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.RequestTreeView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.treeView1.Location = new System.Drawing.Point(3, 61);
-            this.treeView1.Name = "treeView1";
+            this.RequestTreeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RequestTreeView.Location = new System.Drawing.Point(3, 61);
+            this.RequestTreeView.Name = "RequestTreeView";
             treeNode1.Name = "Node1";
             treeNode1.Text = "SimpleRequest";
             treeNode2.Name = "Node0";
             treeNode2.Text = "Examples";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            this.RequestTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode2});
-            this.treeView1.Size = new System.Drawing.Size(172, 472);
-            this.treeView1.TabIndex = 1;
+            this.RequestTreeView.Size = new System.Drawing.Size(172, 472);
+            this.RequestTreeView.TabIndex = 1;
             // 
             // SearchButton
             // 
@@ -207,6 +248,88 @@
             this.NewRequestButton.Text = "New Request";
             this.NewRequestButton.UseVisualStyleBackColor = true;
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 61);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.splitContainer3);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
+            this.splitContainer2.Size = new System.Drawing.Size(784, 472);
+            this.splitContainer2.SplitterDistance = 373;
+            this.splitContainer2.TabIndex = 5;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer3.Size = new System.Drawing.Size(373, 472);
+            this.splitContainer3.SplitterDistance = 88;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer4.Size = new System.Drawing.Size(407, 472);
+            this.splitContainer4.SplitterDistance = 88;
+            this.splitContainer4.TabIndex = 0;
+            // 
+            // saveRequestButton
+            // 
+            this.saveRequestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveRequestButton.Location = new System.Drawing.Point(712, 5);
+            this.saveRequestButton.Name = "saveRequestButton";
+            this.saveRequestButton.Size = new System.Drawing.Size(75, 23);
+            this.saveRequestButton.TabIndex = 4;
+            this.saveRequestButton.Text = "Save";
+            this.saveRequestButton.UseVisualStyleBackColor = true;
+            // 
+            // sendRequestBbutton
+            // 
+            this.sendRequestBbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sendRequestBbutton.Location = new System.Drawing.Point(712, 33);
+            this.sendRequestBbutton.Name = "sendRequestBbutton";
+            this.sendRequestBbutton.Size = new System.Drawing.Size(75, 23);
+            this.sendRequestBbutton.TabIndex = 3;
+            this.sendRequestBbutton.Text = "Send";
+            this.sendRequestBbutton.UseVisualStyleBackColor = true;
+            // 
+            // URITextBox
+            // 
+            this.URITextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.URITextBox.Location = new System.Drawing.Point(93, 33);
+            this.URITextBox.Name = "URITextBox";
+            this.URITextBox.Size = new System.Drawing.Size(613, 23);
+            this.URITextBox.TabIndex = 2;
+            this.URITextBox.Text = "Enter URI: http://localhost:8080/RestApi";
+            // 
+            // RequestNameLabel
+            // 
+            this.RequestNameLabel.AutoSize = true;
+            this.RequestNameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RequestNameLabel.Location = new System.Drawing.Point(3, 5);
+            this.RequestNameLabel.Name = "RequestNameLabel";
+            this.RequestNameLabel.Size = new System.Drawing.Size(134, 21);
+            this.RequestNameLabel.TabIndex = 1;
+            this.RequestNameLabel.Text = "Untitled request";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -215,14 +338,25 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(400, 320);
             this.Name = "MainForm";
             this.Text = "Simple Rest Client v0.1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,10 +375,18 @@
         private SplitContainer splitContainer1;
         private Button SearchButton;
         private TextBox searchTextBox;
-        private TreeView treeView1;
+        private TreeView RequestTreeView;
         private ToolStripMenuItem viewToolStripMenuItem;
         private ToolStripMenuItem hideSidebarToolStripMenuItem;
         private Button NewRequestFolderButton;
         private Button NewRequestButton;
+        private ComboBox RequestTypeComboBox;
+        private Button sendRequestBbutton;
+        private TextBox URITextBox;
+        private Label RequestNameLabel;
+        private Button saveRequestButton;
+        private SplitContainer splitContainer2;
+        private SplitContainer splitContainer3;
+        private SplitContainer splitContainer4;
     }
 }
