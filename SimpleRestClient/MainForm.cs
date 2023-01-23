@@ -15,7 +15,7 @@ namespace SimpleRestClient
 
         private void ButtonExecute_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -23,5 +23,12 @@ namespace SimpleRestClient
             Form about = new AboutForm();
             about.ShowDialog();
         }
+
+        private void hideSidebarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            splitContainer1.Panel1Collapsed = !splitContainer1.Panel1Collapsed;
+            hideSidebarToolStripMenuItem.Text = (splitContainer1.Panel1Collapsed ? "Show sidebar" : "Hide sidebar");
+        }
     }
+
 }

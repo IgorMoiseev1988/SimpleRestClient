@@ -28,47 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("SimpleRequest");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Examples", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hideSidebarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.основноеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPageGet = new System.Windows.Forms.TabPage();
-            this.panelHeaders = new System.Windows.Forms.Panel();
-            this.groupBoxHeaders = new System.Windows.Forms.GroupBox();
-            this.textBoxHeaders = new System.Windows.Forms.TextBox();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.groupBoxRequest = new System.Windows.Forms.GroupBox();
-            this.textBoxRequest = new System.Windows.Forms.TextBox();
-            this.groupBoxResponse = new System.Windows.Forms.GroupBox();
-            this.textBoxResponse = new System.Windows.Forms.TextBox();
-            this.panelCommand = new System.Windows.Forms.Panel();
-            this.buttonExecute = new System.Windows.Forms.Button();
-            this.tabPagePost = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.NewRequestFolderButton = new System.Windows.Forms.Button();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.NewRequestButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPageGet.SuspendLayout();
-            this.panelHeaders.SuspendLayout();
-            this.groupBoxHeaders.SuspendLayout();
-            this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
-            this.splitContainer.Panel1.SuspendLayout();
-            this.splitContainer.Panel2.SuspendLayout();
-            this.splitContainer.SuspendLayout();
-            this.groupBoxRequest.SuspendLayout();
-            this.groupBoxResponse.SuspendLayout();
-            this.panelCommand.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
+            this.viewToolStripMenuItem,
             this.настройкиToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -98,6 +87,21 @@
             this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.сохранитьToolStripMenuItem.Text = "Save";
             // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hideSidebarToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // hideSidebarToolStripMenuItem
+            // 
+            this.hideSidebarToolStripMenuItem.Name = "hideSidebarToolStripMenuItem";
+            this.hideSidebarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hideSidebarToolStripMenuItem.Text = "Hide sidebar";
+            this.hideSidebarToolStripMenuItem.Click += new System.EventHandler(this.hideSidebarToolStripMenuItem_Click);
+            // 
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -109,7 +113,7 @@
             // основноеToolStripMenuItem
             // 
             this.основноеToolStripMenuItem.Name = "основноеToolStripMenuItem";
-            this.основноеToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.основноеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.основноеToolStripMenuItem.Text = "Main";
             // 
             // helpToolStripMenuItem
@@ -123,192 +127,102 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // tabControl
+            // splitContainer1
             // 
-            this.tabControl.Controls.Add(this.tabPageGet);
-            this.tabControl.Controls.Add(this.tabPagePost);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(0, 24);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(976, 538);
-            this.tabControl.TabIndex = 1;
+            this.splitContainer1.BackColor = System.Drawing.SystemColors.Window;
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // tabPageGet
+            // splitContainer1.Panel1
             // 
-            this.tabPageGet.Controls.Add(this.panelHeaders);
-            this.tabPageGet.Controls.Add(this.panelMain);
-            this.tabPageGet.Controls.Add(this.panelCommand);
-            this.tabPageGet.Location = new System.Drawing.Point(4, 24);
-            this.tabPageGet.Name = "tabPageGet";
-            this.tabPageGet.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGet.Size = new System.Drawing.Size(968, 510);
-            this.tabPageGet.TabIndex = 0;
-            this.tabPageGet.Text = "GET";
-            this.tabPageGet.UseVisualStyleBackColor = true;
+            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            this.splitContainer1.Panel1.Controls.Add(this.SearchButton);
+            this.splitContainer1.Panel1.Controls.Add(this.NewRequestFolderButton);
+            this.splitContainer1.Panel1.Controls.Add(this.searchTextBox);
+            this.splitContainer1.Panel1.Controls.Add(this.NewRequestButton);
+            this.splitContainer1.Panel1MinSize = 180;
+            this.splitContainer1.Size = new System.Drawing.Size(976, 538);
+            this.splitContainer1.SplitterDistance = 180;
+            this.splitContainer1.TabIndex = 1;
             // 
-            // panelHeaders
+            // treeView1
             // 
-            this.panelHeaders.Controls.Add(this.groupBoxHeaders);
-            this.panelHeaders.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaders.Location = new System.Drawing.Point(3, 3);
-            this.panelHeaders.Name = "panelHeaders";
-            this.panelHeaders.Size = new System.Drawing.Size(962, 130);
-            this.panelHeaders.TabIndex = 2;
-            // 
-            // groupBoxHeaders
-            // 
-            this.groupBoxHeaders.Controls.Add(this.textBoxHeaders);
-            this.groupBoxHeaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxHeaders.Location = new System.Drawing.Point(0, 0);
-            this.groupBoxHeaders.Name = "groupBoxHeaders";
-            this.groupBoxHeaders.Size = new System.Drawing.Size(962, 130);
-            this.groupBoxHeaders.TabIndex = 0;
-            this.groupBoxHeaders.TabStop = false;
-            this.groupBoxHeaders.Text = "Headers";
-            // 
-            // textBoxHeaders
-            // 
-            this.textBoxHeaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxHeaders.Location = new System.Drawing.Point(3, 19);
-            this.textBoxHeaders.Multiline = true;
-            this.textBoxHeaders.Name = "textBoxHeaders";
-            this.textBoxHeaders.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxHeaders.Size = new System.Drawing.Size(956, 108);
-            this.textBoxHeaders.TabIndex = 0;
-            // 
-            // panelMain
-            // 
-            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelMain.Controls.Add(this.splitContainer);
-            this.panelMain.Location = new System.Drawing.Point(3, 130);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(962, 342);
-            this.panelMain.TabIndex = 1;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.treeView1.Location = new System.Drawing.Point(3, 61);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "SimpleRequest";
+            treeNode2.Name = "Node0";
+            treeNode2.Text = "Examples";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            this.treeView1.Size = new System.Drawing.Size(172, 472);
+            this.treeView1.TabIndex = 1;
             // 
-            // splitContainer
+            // SearchButton
             // 
-            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer.Name = "splitContainer";
-            this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchButton.Location = new System.Drawing.Point(120, 3);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(55, 23);
+            this.SearchButton.TabIndex = 1;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
             // 
-            // splitContainer.Panel1
+            // NewRequestFolderButton
             // 
-            this.splitContainer.Panel1.Controls.Add(this.groupBoxRequest);
+            this.NewRequestFolderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewRequestFolderButton.Location = new System.Drawing.Point(2, 32);
+            this.NewRequestFolderButton.Name = "NewRequestFolderButton";
+            this.NewRequestFolderButton.Size = new System.Drawing.Size(78, 23);
+            this.NewRequestFolderButton.TabIndex = 5;
+            this.NewRequestFolderButton.Text = "New folder";
+            this.NewRequestFolderButton.UseVisualStyleBackColor = true;
             // 
-            // splitContainer.Panel2
+            // searchTextBox
             // 
-            this.splitContainer.Panel2.Controls.Add(this.groupBoxResponse);
-            this.splitContainer.Size = new System.Drawing.Size(962, 342);
-            this.splitContainer.SplitterDistance = 171;
-            this.splitContainer.TabIndex = 0;
+            this.searchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchTextBox.Location = new System.Drawing.Point(3, 3);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(111, 23);
+            this.searchTextBox.TabIndex = 0;
             // 
-            // groupBoxRequest
+            // NewRequestButton
             // 
-            this.groupBoxRequest.Controls.Add(this.textBoxRequest);
-            this.groupBoxRequest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxRequest.Location = new System.Drawing.Point(0, 0);
-            this.groupBoxRequest.Name = "groupBoxRequest";
-            this.groupBoxRequest.Size = new System.Drawing.Size(962, 171);
-            this.groupBoxRequest.TabIndex = 0;
-            this.groupBoxRequest.TabStop = false;
-            this.groupBoxRequest.Text = "Request";
-            // 
-            // textBoxRequest
-            // 
-            this.textBoxRequest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxRequest.Location = new System.Drawing.Point(3, 19);
-            this.textBoxRequest.Multiline = true;
-            this.textBoxRequest.Name = "textBoxRequest";
-            this.textBoxRequest.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxRequest.Size = new System.Drawing.Size(956, 149);
-            this.textBoxRequest.TabIndex = 0;
-            // 
-            // groupBoxResponse
-            // 
-            this.groupBoxResponse.Controls.Add(this.textBoxResponse);
-            this.groupBoxResponse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxResponse.Location = new System.Drawing.Point(0, 0);
-            this.groupBoxResponse.Name = "groupBoxResponse";
-            this.groupBoxResponse.Size = new System.Drawing.Size(962, 167);
-            this.groupBoxResponse.TabIndex = 1;
-            this.groupBoxResponse.TabStop = false;
-            this.groupBoxResponse.Text = "Response";
-            // 
-            // textBoxResponse
-            // 
-            this.textBoxResponse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxResponse.Location = new System.Drawing.Point(3, 19);
-            this.textBoxResponse.Multiline = true;
-            this.textBoxResponse.Name = "textBoxResponse";
-            this.textBoxResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxResponse.Size = new System.Drawing.Size(956, 145);
-            this.textBoxResponse.TabIndex = 0;
-            // 
-            // panelCommand
-            // 
-            this.panelCommand.Controls.Add(this.buttonExecute);
-            this.panelCommand.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelCommand.Location = new System.Drawing.Point(3, 473);
-            this.panelCommand.Name = "panelCommand";
-            this.panelCommand.Size = new System.Drawing.Size(962, 34);
-            this.panelCommand.TabIndex = 0;
-            // 
-            // buttonExecute
-            // 
-            this.buttonExecute.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExecute.Location = new System.Drawing.Point(883, 5);
-            this.buttonExecute.Name = "buttonExecute";
-            this.buttonExecute.Size = new System.Drawing.Size(75, 23);
-            this.buttonExecute.TabIndex = 0;
-            this.buttonExecute.Text = "Execute";
-            this.buttonExecute.UseVisualStyleBackColor = true;
-            this.buttonExecute.Click += new System.EventHandler(this.ButtonExecute_Click);
-            // 
-            // tabPagePost
-            // 
-            this.tabPagePost.Location = new System.Drawing.Point(4, 24);
-            this.tabPagePost.Name = "tabPagePost";
-            this.tabPagePost.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePost.Size = new System.Drawing.Size(968, 510);
-            this.tabPagePost.TabIndex = 1;
-            this.tabPagePost.Text = "POST";
-            this.tabPagePost.UseVisualStyleBackColor = true;
+            this.NewRequestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewRequestButton.Location = new System.Drawing.Point(88, 32);
+            this.NewRequestButton.Name = "NewRequestButton";
+            this.NewRequestButton.Size = new System.Drawing.Size(87, 23);
+            this.NewRequestButton.TabIndex = 4;
+            this.NewRequestButton.Text = "New Request";
+            this.NewRequestButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 562);
-            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Simple Rest Client v0.1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl.ResumeLayout(false);
-            this.tabPageGet.ResumeLayout(false);
-            this.panelHeaders.ResumeLayout(false);
-            this.groupBoxHeaders.ResumeLayout(false);
-            this.groupBoxHeaders.PerformLayout();
-            this.panelMain.ResumeLayout(false);
-            this.splitContainer.Panel1.ResumeLayout(false);
-            this.splitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
-            this.splitContainer.ResumeLayout(false);
-            this.groupBoxRequest.ResumeLayout(false);
-            this.groupBoxRequest.PerformLayout();
-            this.groupBoxResponse.ResumeLayout(false);
-            this.groupBoxResponse.PerformLayout();
-            this.panelCommand.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,19 +238,13 @@
         private ToolStripMenuItem основноеToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
-        private TabControl tabControl;
-        private TabPage tabPageGet;
-        private TabPage tabPagePost;
-        private Panel panelMain;
-        private Panel panelCommand;
-        private SplitContainer splitContainer;
-        private GroupBox groupBoxRequest;
-        private Button buttonExecute;
-        private TextBox textBoxRequest;
-        private GroupBox groupBoxResponse;
-        private TextBox textBoxResponse;
-        private Panel panelHeaders;
-        private GroupBox groupBoxHeaders;
-        private TextBox textBoxHeaders;
+        private SplitContainer splitContainer1;
+        private Button SearchButton;
+        private TextBox searchTextBox;
+        private TreeView treeView1;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem hideSidebarToolStripMenuItem;
+        private Button NewRequestFolderButton;
+        private Button NewRequestButton;
     }
 }
