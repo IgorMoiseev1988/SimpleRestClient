@@ -8,6 +8,7 @@ namespace SimpleRestClient
         public MainForm()
         {
             InitializeComponent();
+            this.requestTypeComboBox.SelectedIndex = 0;
         }
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)

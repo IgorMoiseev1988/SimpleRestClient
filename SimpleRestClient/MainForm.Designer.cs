@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ComboBox RequestTypeComboBox;
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("SimpleRequest");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Examples", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("SimpleRequest");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Examples", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +54,7 @@
             this.sendRequestBbutton = new System.Windows.Forms.Button();
             this.URITextBox = new System.Windows.Forms.TextBox();
             this.RequestNameLabel = new System.Windows.Forms.Label();
-            RequestTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.requestTypeComboBox = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -71,19 +70,18 @@
             this.splitContainer4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // RequestTypeComboBox
+            // requestTypeComboBox
             // 
-            RequestTypeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            RequestTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            RequestTypeComboBox.FormattingEnabled = true;
-            RequestTypeComboBox.Items.AddRange(new object[] {
+            this.requestTypeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.requestTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.requestTypeComboBox.FormattingEnabled = true;
+            this.requestTypeComboBox.Items.AddRange(new object[] {
             "POST",
             "GET"});
-            RequestTypeComboBox.Location = new System.Drawing.Point(3, 33);
-            RequestTypeComboBox.Name = "RequestTypeComboBox";
-            RequestTypeComboBox.Size = new System.Drawing.Size(84, 23);
-            RequestTypeComboBox.TabIndex = 0;
-            RequestTypeComboBox.SelectedIndex = 0;
+            this.requestTypeComboBox.Location = new System.Drawing.Point(3, 33);
+            this.requestTypeComboBox.Name = "requestTypeComboBox";
+            this.requestTypeComboBox.Size = new System.Drawing.Size(84, 23);
+            this.requestTypeComboBox.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -110,14 +108,14 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -190,7 +188,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.sendRequestBbutton);
             this.splitContainer1.Panel2.Controls.Add(this.URITextBox);
             this.splitContainer1.Panel2.Controls.Add(this.RequestNameLabel);
-            this.splitContainer1.Panel2.Controls.Add(RequestTypeComboBox);
+            this.splitContainer1.Panel2.Controls.Add(this.requestTypeComboBox);
             this.splitContainer1.Panel2MinSize = 200;
             this.splitContainer1.Size = new System.Drawing.Size(976, 538);
             this.splitContainer1.SplitterDistance = 180;
@@ -203,12 +201,12 @@
             this.RequestTreeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RequestTreeView.Location = new System.Drawing.Point(3, 61);
             this.RequestTreeView.Name = "RequestTreeView";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "SimpleRequest";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "Examples";
+            treeNode3.Name = "Node1";
+            treeNode3.Text = "SimpleRequest";
+            treeNode4.Name = "Node0";
+            treeNode4.Text = "Examples";
             this.RequestTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode4});
             this.RequestTreeView.Size = new System.Drawing.Size(172, 472);
             this.RequestTreeView.TabIndex = 1;
             this.RequestTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.RequestTreeView_NodeDoubleClick);
@@ -384,7 +382,7 @@
         private ToolStripMenuItem hideSidebarToolStripMenuItem;
         private Button NewRequestFolderButton;
         private Button NewRequestButton;
-        private ComboBox RequestTypeComboBox;
+        private ComboBox requestTypeComboBox;
         private Button sendRequestBbutton;
         private TextBox URITextBox;
         private Label RequestNameLabel;
