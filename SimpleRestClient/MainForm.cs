@@ -36,7 +36,8 @@ namespace SimpleRestClient
             if (openFileDialog.ShowDialog() == DialogResult.OK )
             {
                 MessageBox.Show($"Try to open {openFileDialog.FileName}");
-            } else
+            } 
+            else
             {
                 MessageBox.Show($"Open canceled");
             }
@@ -49,7 +50,8 @@ namespace SimpleRestClient
             if (saveFileDialog.ShowDialog()== DialogResult.OK )
             {
                 MessageBox.Show($"Try to save {saveFileDialog.FileName}");
-            } else
+            } 
+            else
             {
                 MessageBox.Show($"Save canceled");
             }

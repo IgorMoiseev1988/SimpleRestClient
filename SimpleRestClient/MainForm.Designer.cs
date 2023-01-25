@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("SimpleRequest");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Examples", new System.Windows.Forms.TreeNode[] {
-            treeNode3});
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,11 +39,12 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.RequestTreeView = new System.Windows.Forms.TreeView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SearchButton = new System.Windows.Forms.Button();
             this.NewRequestFolderButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.NewRequestButton = new System.Windows.Forms.Button();
+            this.requestTypeComboBox = new System.Windows.Forms.ComboBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -54,7 +52,7 @@
             this.sendRequestBbutton = new System.Windows.Forms.Button();
             this.URITextBox = new System.Windows.Forms.TextBox();
             this.RequestNameLabel = new System.Windows.Forms.Label();
-            this.requestTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -69,19 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // requestTypeComboBox
-            // 
-            this.requestTypeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.requestTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.requestTypeComboBox.FormattingEnabled = true;
-            this.requestTypeComboBox.Items.AddRange(new object[] {
-            "POST",
-            "GET"});
-            this.requestTypeComboBox.Location = new System.Drawing.Point(3, 33);
-            this.requestTypeComboBox.Name = "requestTypeComboBox";
-            this.requestTypeComboBox.Size = new System.Drawing.Size(84, 23);
-            this.requestTypeComboBox.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -174,7 +159,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.RequestTreeView);
+            this.splitContainer1.Panel1.Controls.Add(this.panel1);
             this.splitContainer1.Panel1.Controls.Add(this.SearchButton);
             this.splitContainer1.Panel1.Controls.Add(this.NewRequestFolderButton);
             this.splitContainer1.Panel1.Controls.Add(this.searchTextBox);
@@ -183,33 +168,27 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.requestTypeComboBox);
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.Controls.Add(this.saveRequestButton);
             this.splitContainer1.Panel2.Controls.Add(this.sendRequestBbutton);
             this.splitContainer1.Panel2.Controls.Add(this.URITextBox);
             this.splitContainer1.Panel2.Controls.Add(this.RequestNameLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.requestTypeComboBox);
             this.splitContainer1.Panel2MinSize = 200;
             this.splitContainer1.Size = new System.Drawing.Size(976, 538);
             this.splitContainer1.SplitterDistance = 180;
             this.splitContainer1.TabIndex = 1;
             // 
-            // RequestTreeView
+            // panel1
             // 
-            this.RequestTreeView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RequestTreeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RequestTreeView.Location = new System.Drawing.Point(3, 61);
-            this.RequestTreeView.Name = "RequestTreeView";
-            treeNode3.Name = "Node1";
-            treeNode3.Text = "SimpleRequest";
-            treeNode4.Name = "Node0";
-            treeNode4.Text = "Examples";
-            this.RequestTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            this.RequestTreeView.Size = new System.Drawing.Size(172, 472);
-            this.RequestTreeView.TabIndex = 1;
-            this.RequestTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.RequestTreeView_NodeDoubleClick);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(3, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(172, 472);
+            this.panel1.TabIndex = 6;
             // 
             // SearchButton
             // 
@@ -249,6 +228,18 @@
             this.NewRequestButton.TabIndex = 4;
             this.NewRequestButton.Text = "New Request";
             this.NewRequestButton.UseVisualStyleBackColor = true;
+            // 
+            // requestTypeComboBox
+            // 
+            this.requestTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.requestTypeComboBox.FormattingEnabled = true;
+            this.requestTypeComboBox.Items.AddRange(new object[] {
+            "POST",
+            "GET"});
+            this.requestTypeComboBox.Location = new System.Drawing.Point(3, 33);
+            this.requestTypeComboBox.Name = "requestTypeComboBox";
+            this.requestTypeComboBox.Size = new System.Drawing.Size(84, 23);
+            this.requestTypeComboBox.TabIndex = 6;
             // 
             // splitContainer2
             // 
@@ -377,12 +368,10 @@
         private SplitContainer splitContainer1;
         private Button SearchButton;
         private TextBox searchTextBox;
-        private TreeView RequestTreeView;
         private ToolStripMenuItem viewToolStripMenuItem;
         private ToolStripMenuItem hideSidebarToolStripMenuItem;
         private Button NewRequestFolderButton;
         private Button NewRequestButton;
-        private ComboBox requestTypeComboBox;
         private Button sendRequestBbutton;
         private TextBox URITextBox;
         private Label RequestNameLabel;
@@ -390,5 +379,8 @@
         private SplitContainer splitContainer2;
         private SplitContainer splitContainer3;
         private SplitContainer splitContainer4;
+        private Panel panel1;
+        private FolderBrowserDialog folderBrowserDialog1;
+        private ComboBox requestTypeComboBox;
     }
 }
