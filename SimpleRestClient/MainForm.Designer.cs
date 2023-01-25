@@ -29,47 +29,51 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.основноеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hideSidebarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPageGet = new System.Windows.Forms.TabPage();
-            this.panelHeaders = new System.Windows.Forms.Panel();
-            this.groupBoxHeaders = new System.Windows.Forms.GroupBox();
-            this.textBoxHeaders = new System.Windows.Forms.TextBox();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.groupBoxRequest = new System.Windows.Forms.GroupBox();
-            this.textBoxRequest = new System.Windows.Forms.TextBox();
-            this.groupBoxResponse = new System.Windows.Forms.GroupBox();
-            this.textBoxResponse = new System.Windows.Forms.TextBox();
-            this.panelCommand = new System.Windows.Forms.Panel();
-            this.buttonExecute = new System.Windows.Forms.Button();
-            this.tabPagePost = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.NewRequestFolderButton = new System.Windows.Forms.Button();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.NewRequestButton = new System.Windows.Forms.Button();
+            this.requestTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.saveRequestButton = new System.Windows.Forms.Button();
+            this.sendRequestBbutton = new System.Windows.Forms.Button();
+            this.URITextBox = new System.Windows.Forms.TextBox();
+            this.RequestNameLabel = new System.Windows.Forms.Label();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPageGet.SuspendLayout();
-            this.panelHeaders.SuspendLayout();
-            this.groupBoxHeaders.SuspendLayout();
-            this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
-            this.splitContainer.Panel1.SuspendLayout();
-            this.splitContainer.Panel2.SuspendLayout();
-            this.splitContainer.SuspendLayout();
-            this.groupBoxRequest.SuspendLayout();
-            this.groupBoxResponse.SuspendLayout();
-            this.panelCommand.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
-            this.настройкиToolStripMenuItem,
+            this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem,
+            this.preferenceToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -77,40 +81,57 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // файлToolStripMenuItem
+            // fileToolStripMenuItem
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.загрузитьToolStripMenuItem,
-            this.сохранитьToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.файлToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem,
+            this.saveToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
-            // загрузитьToolStripMenuItem
+            // loadToolStripMenuItem
             // 
-            this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.загрузитьToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
-            // сохранитьToolStripMenuItem
+            // saveToolStripMenuItem
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.сохранитьToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
-            // настройкиToolStripMenuItem
+            // viewToolStripMenuItem
             // 
-            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.основноеToolStripMenuItem});
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.настройкиToolStripMenuItem.Text = "Preference";
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hideSidebarToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
             // 
-            // основноеToolStripMenuItem
+            // hideSidebarToolStripMenuItem
             // 
-            this.основноеToolStripMenuItem.Name = "основноеToolStripMenuItem";
-            this.основноеToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
-            this.основноеToolStripMenuItem.Text = "Main";
+            this.hideSidebarToolStripMenuItem.Name = "hideSidebarToolStripMenuItem";
+            this.hideSidebarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.hideSidebarToolStripMenuItem.Text = "Hide sidebar";
+            this.hideSidebarToolStripMenuItem.Click += new System.EventHandler(this.hideSidebarToolStripMenuItem_Click);
+            // 
+            // preferenceToolStripMenuItem
+            // 
+            this.preferenceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mainToolStripMenuItem});
+            this.preferenceToolStripMenuItem.Name = "preferenceToolStripMenuItem";
+            this.preferenceToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.preferenceToolStripMenuItem.Text = "Preference";
+            // 
+            // mainToolStripMenuItem
+            // 
+            this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
+            this.mainToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.mainToolStripMenuItem.Text = "Main";
             // 
             // helpToolStripMenuItem
             // 
@@ -127,188 +148,208 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // tabControl
+            // splitContainer1
             // 
-            this.tabControl.Controls.Add(this.tabPageGet);
-            this.tabControl.Controls.Add(this.tabPagePost);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(0, 24);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(976, 538);
-            this.tabControl.TabIndex = 1;
+            this.splitContainer1.BackColor = System.Drawing.SystemColors.Window;
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // tabPageGet
+            // splitContainer1.Panel1
             // 
-            this.tabPageGet.Controls.Add(this.panelHeaders);
-            this.tabPageGet.Controls.Add(this.panelMain);
-            this.tabPageGet.Controls.Add(this.panelCommand);
-            this.tabPageGet.Location = new System.Drawing.Point(4, 24);
-            this.tabPageGet.Name = "tabPageGet";
-            this.tabPageGet.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGet.Size = new System.Drawing.Size(968, 510);
-            this.tabPageGet.TabIndex = 0;
-            this.tabPageGet.Text = "GET";
-            this.tabPageGet.UseVisualStyleBackColor = true;
+            this.splitContainer1.Panel1.Controls.Add(this.panel1);
+            this.splitContainer1.Panel1.Controls.Add(this.SearchButton);
+            this.splitContainer1.Panel1.Controls.Add(this.NewRequestFolderButton);
+            this.splitContainer1.Panel1.Controls.Add(this.searchTextBox);
+            this.splitContainer1.Panel1.Controls.Add(this.NewRequestButton);
+            this.splitContainer1.Panel1MinSize = 180;
             // 
-            // panelHeaders
+            // splitContainer1.Panel2
             // 
-            this.panelHeaders.Controls.Add(this.groupBoxHeaders);
-            this.panelHeaders.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaders.Location = new System.Drawing.Point(3, 3);
-            this.panelHeaders.Name = "panelHeaders";
-            this.panelHeaders.Size = new System.Drawing.Size(962, 130);
-            this.panelHeaders.TabIndex = 2;
+            this.splitContainer1.Panel2.Controls.Add(this.requestTypeComboBox);
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel2.Controls.Add(this.saveRequestButton);
+            this.splitContainer1.Panel2.Controls.Add(this.sendRequestBbutton);
+            this.splitContainer1.Panel2.Controls.Add(this.URITextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.RequestNameLabel);
+            this.splitContainer1.Panel2MinSize = 200;
+            this.splitContainer1.Size = new System.Drawing.Size(976, 538);
+            this.splitContainer1.SplitterDistance = 180;
+            this.splitContainer1.TabIndex = 1;
             // 
-            // groupBoxHeaders
+            // panel1
             // 
-            this.groupBoxHeaders.Controls.Add(this.textBoxHeaders);
-            this.groupBoxHeaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxHeaders.Location = new System.Drawing.Point(0, 0);
-            this.groupBoxHeaders.Name = "groupBoxHeaders";
-            this.groupBoxHeaders.Size = new System.Drawing.Size(962, 130);
-            this.groupBoxHeaders.TabIndex = 0;
-            this.groupBoxHeaders.TabStop = false;
-            this.groupBoxHeaders.Text = "Headers";
-            // 
-            // textBoxHeaders
-            // 
-            this.textBoxHeaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxHeaders.Location = new System.Drawing.Point(3, 19);
-            this.textBoxHeaders.Multiline = true;
-            this.textBoxHeaders.Name = "textBoxHeaders";
-            this.textBoxHeaders.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxHeaders.Size = new System.Drawing.Size(956, 108);
-            this.textBoxHeaders.TabIndex = 0;
-            // 
-            // panelMain
-            // 
-            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelMain.Controls.Add(this.splitContainer);
-            this.panelMain.Location = new System.Drawing.Point(3, 130);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(962, 342);
-            this.panelMain.TabIndex = 1;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(3, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(172, 472);
+            this.panel1.TabIndex = 6;
             // 
-            // splitContainer
+            // SearchButton
             // 
-            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer.Name = "splitContainer";
-            this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchButton.Location = new System.Drawing.Point(120, 3);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(55, 23);
+            this.SearchButton.TabIndex = 1;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
             // 
-            // splitContainer.Panel1
+            // NewRequestFolderButton
             // 
-            this.splitContainer.Panel1.Controls.Add(this.groupBoxRequest);
+            this.NewRequestFolderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewRequestFolderButton.Location = new System.Drawing.Point(2, 32);
+            this.NewRequestFolderButton.Name = "NewRequestFolderButton";
+            this.NewRequestFolderButton.Size = new System.Drawing.Size(78, 23);
+            this.NewRequestFolderButton.TabIndex = 5;
+            this.NewRequestFolderButton.Text = "New folder";
+            this.NewRequestFolderButton.UseVisualStyleBackColor = true;
             // 
-            // splitContainer.Panel2
+            // searchTextBox
             // 
-            this.splitContainer.Panel2.Controls.Add(this.groupBoxResponse);
-            this.splitContainer.Size = new System.Drawing.Size(962, 342);
-            this.splitContainer.SplitterDistance = 171;
-            this.splitContainer.TabIndex = 0;
+            this.searchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchTextBox.Location = new System.Drawing.Point(3, 3);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(111, 23);
+            this.searchTextBox.TabIndex = 0;
             // 
-            // groupBoxRequest
+            // NewRequestButton
             // 
-            this.groupBoxRequest.Controls.Add(this.textBoxRequest);
-            this.groupBoxRequest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxRequest.Location = new System.Drawing.Point(0, 0);
-            this.groupBoxRequest.Name = "groupBoxRequest";
-            this.groupBoxRequest.Size = new System.Drawing.Size(962, 171);
-            this.groupBoxRequest.TabIndex = 0;
-            this.groupBoxRequest.TabStop = false;
-            this.groupBoxRequest.Text = "Request";
+            this.NewRequestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewRequestButton.Location = new System.Drawing.Point(88, 32);
+            this.NewRequestButton.Name = "NewRequestButton";
+            this.NewRequestButton.Size = new System.Drawing.Size(87, 23);
+            this.NewRequestButton.TabIndex = 4;
+            this.NewRequestButton.Text = "New Request";
+            this.NewRequestButton.UseVisualStyleBackColor = true;
             // 
-            // textBoxRequest
+            // requestTypeComboBox
             // 
-            this.textBoxRequest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxRequest.Location = new System.Drawing.Point(3, 19);
-            this.textBoxRequest.Multiline = true;
-            this.textBoxRequest.Name = "textBoxRequest";
-            this.textBoxRequest.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxRequest.Size = new System.Drawing.Size(956, 149);
-            this.textBoxRequest.TabIndex = 0;
+            this.requestTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.requestTypeComboBox.FormattingEnabled = true;
+            this.requestTypeComboBox.Items.AddRange(new object[] {
+            "POST",
+            "GET"});
+            this.requestTypeComboBox.Location = new System.Drawing.Point(3, 33);
+            this.requestTypeComboBox.Name = "requestTypeComboBox";
+            this.requestTypeComboBox.Size = new System.Drawing.Size(84, 23);
+            this.requestTypeComboBox.TabIndex = 6;
             // 
-            // groupBoxResponse
+            // splitContainer2
             // 
-            this.groupBoxResponse.Controls.Add(this.textBoxResponse);
-            this.groupBoxResponse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxResponse.Location = new System.Drawing.Point(0, 0);
-            this.groupBoxResponse.Name = "groupBoxResponse";
-            this.groupBoxResponse.Size = new System.Drawing.Size(962, 167);
-            this.groupBoxResponse.TabIndex = 1;
-            this.groupBoxResponse.TabStop = false;
-            this.groupBoxResponse.Text = "Response";
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 61);
+            this.splitContainer2.Name = "splitContainer2";
             // 
-            // textBoxResponse
+            // splitContainer2.Panel1
             // 
-            this.textBoxResponse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxResponse.Location = new System.Drawing.Point(3, 19);
-            this.textBoxResponse.Multiline = true;
-            this.textBoxResponse.Name = "textBoxResponse";
-            this.textBoxResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxResponse.Size = new System.Drawing.Size(956, 145);
-            this.textBoxResponse.TabIndex = 0;
+            this.splitContainer2.Panel1.Controls.Add(this.splitContainer3);
             // 
-            // panelCommand
+            // splitContainer2.Panel2
             // 
-            this.panelCommand.Controls.Add(this.buttonExecute);
-            this.panelCommand.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelCommand.Location = new System.Drawing.Point(3, 473);
-            this.panelCommand.Name = "panelCommand";
-            this.panelCommand.Size = new System.Drawing.Size(962, 34);
-            this.panelCommand.TabIndex = 0;
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
+            this.splitContainer2.Size = new System.Drawing.Size(784, 472);
+            this.splitContainer2.SplitterDistance = 373;
+            this.splitContainer2.TabIndex = 5;
             // 
-            // buttonExecute
+            // splitContainer3
             // 
-            this.buttonExecute.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExecute.Location = new System.Drawing.Point(883, 5);
-            this.buttonExecute.Name = "buttonExecute";
-            this.buttonExecute.Size = new System.Drawing.Size(75, 23);
-            this.buttonExecute.TabIndex = 0;
-            this.buttonExecute.Text = "Execute";
-            this.buttonExecute.UseVisualStyleBackColor = true;
-            this.buttonExecute.Click += new System.EventHandler(this.ButtonExecute_Click);
+            this.splitContainer3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer3.Size = new System.Drawing.Size(373, 472);
+            this.splitContainer3.SplitterDistance = 88;
+            this.splitContainer3.TabIndex = 0;
             // 
-            // tabPagePost
+            // splitContainer4
             // 
-            this.tabPagePost.Location = new System.Drawing.Point(4, 24);
-            this.tabPagePost.Name = "tabPagePost";
-            this.tabPagePost.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePost.Size = new System.Drawing.Size(968, 510);
-            this.tabPagePost.TabIndex = 1;
-            this.tabPagePost.Text = "POST";
-            this.tabPagePost.UseVisualStyleBackColor = true;
+            this.splitContainer4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer4.Size = new System.Drawing.Size(407, 472);
+            this.splitContainer4.SplitterDistance = 88;
+            this.splitContainer4.TabIndex = 0;
+            // 
+            // saveRequestButton
+            // 
+            this.saveRequestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveRequestButton.Location = new System.Drawing.Point(712, 5);
+            this.saveRequestButton.Name = "saveRequestButton";
+            this.saveRequestButton.Size = new System.Drawing.Size(75, 23);
+            this.saveRequestButton.TabIndex = 4;
+            this.saveRequestButton.Text = "Save";
+            this.saveRequestButton.UseVisualStyleBackColor = true;
+            // 
+            // sendRequestBbutton
+            // 
+            this.sendRequestBbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sendRequestBbutton.Location = new System.Drawing.Point(712, 33);
+            this.sendRequestBbutton.Name = "sendRequestBbutton";
+            this.sendRequestBbutton.Size = new System.Drawing.Size(75, 23);
+            this.sendRequestBbutton.TabIndex = 3;
+            this.sendRequestBbutton.Text = "Send";
+            this.sendRequestBbutton.UseVisualStyleBackColor = true;
+            // 
+            // URITextBox
+            // 
+            this.URITextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.URITextBox.Location = new System.Drawing.Point(93, 33);
+            this.URITextBox.Name = "URITextBox";
+            this.URITextBox.Size = new System.Drawing.Size(613, 23);
+            this.URITextBox.TabIndex = 2;
+            this.URITextBox.Text = "Enter URI: http://localhost:8080/RestApi";
+            // 
+            // RequestNameLabel
+            // 
+            this.RequestNameLabel.AutoSize = true;
+            this.RequestNameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RequestNameLabel.Location = new System.Drawing.Point(3, 5);
+            this.RequestNameLabel.Name = "RequestNameLabel";
+            this.RequestNameLabel.Size = new System.Drawing.Size(134, 21);
+            this.RequestNameLabel.TabIndex = 1;
+            this.RequestNameLabel.Text = "Untitled request";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 562);
-            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(400, 320);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Simple Rest Client v0.1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl.ResumeLayout(false);
-            this.tabPageGet.ResumeLayout(false);
-            this.panelHeaders.ResumeLayout(false);
-            this.groupBoxHeaders.ResumeLayout(false);
-            this.groupBoxHeaders.PerformLayout();
-            this.panelMain.ResumeLayout(false);
-            this.splitContainer.Panel1.ResumeLayout(false);
-            this.splitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
-            this.splitContainer.ResumeLayout(false);
-            this.groupBoxRequest.ResumeLayout(false);
-            this.groupBoxRequest.PerformLayout();
-            this.groupBoxResponse.ResumeLayout(false);
-            this.groupBoxResponse.PerformLayout();
-            this.panelCommand.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,26 +358,29 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem файлToolStripMenuItem;
-        private ToolStripMenuItem загрузитьToolStripMenuItem;
-        private ToolStripMenuItem сохранитьToolStripMenuItem;
-        private ToolStripMenuItem настройкиToolStripMenuItem;
-        private ToolStripMenuItem основноеToolStripMenuItem;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem loadToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem preferenceToolStripMenuItem;
+        private ToolStripMenuItem mainToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
-        private TabControl tabControl;
-        private TabPage tabPageGet;
-        private TabPage tabPagePost;
-        private Panel panelMain;
-        private Panel panelCommand;
-        private SplitContainer splitContainer;
-        private GroupBox groupBoxRequest;
-        private Button buttonExecute;
-        private TextBox textBoxRequest;
-        private GroupBox groupBoxResponse;
-        private TextBox textBoxResponse;
-        private Panel panelHeaders;
-        private GroupBox groupBoxHeaders;
-        private TextBox textBoxHeaders;
+        private SplitContainer splitContainer1;
+        private Button SearchButton;
+        private TextBox searchTextBox;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem hideSidebarToolStripMenuItem;
+        private Button NewRequestFolderButton;
+        private Button NewRequestButton;
+        private Button sendRequestBbutton;
+        private TextBox URITextBox;
+        private Label RequestNameLabel;
+        private Button saveRequestButton;
+        private SplitContainer splitContainer2;
+        private SplitContainer splitContainer3;
+        private SplitContainer splitContainer4;
+        private Panel panel1;
+        private FolderBrowserDialog folderBrowserDialog1;
+        private ComboBox requestTypeComboBox;
     }
 }
